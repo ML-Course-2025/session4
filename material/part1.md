@@ -370,7 +370,8 @@ This was just a brief introduction! There's much more to learn. Here are some re
 - **Interactive Playground:** [TensorFlow Playground](https://playground.tensorflow.org/) - Visualize how different network structures and parameters affect learning.
 - [More on Perceptrons](https://humphryscomputing.com/Notes/Neural/single.neural.html)
 - **Alternative Introduction:** [UW Madison Data Science Course Notes](https://uw-madison-datascience.github.io/2022-10-26-machine-learning-novice-sklearn/06-neural-networks/index.html)
-
+- [Kaggle: Intro to Deep Learning](https://www.kaggle.com/learn/intro-to-deep-learning) 
+- [Google ML Crash Course – Activation Functions](https://developers.google.com/machine-learning/crash-course/neural-networks/activation-functions)  
 
 ---
 

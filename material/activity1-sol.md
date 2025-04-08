@@ -37,6 +37,12 @@ def perceptron(inputs, weights, bias):
     # Apply the step activation function:
     # If weighted_sum is greater than or equal to 0, output 1
     # Otherwise, output 0
+    if weighted_sum >= 0:
+        # What should the function return if it "fires"?
+        output = 1
+    else:
+        # What should the function return if it doesn't "fire"?
+        output = 0
     # --- END YOUR CODE --- #
 
     return output
@@ -69,6 +75,8 @@ gate_inputs = [[0, 0], [0, 1], [1, 0], [1, 1]]
 
 # --- YOUR TASK: Find suitable weights and bias for OR --- #
 # Hint: We want the weighted sum to be >= 0 when at least one input is 1.
+weights_or = [1.0, 1.0] # Possible weights
+bias_or = -0.5     # Possible bias (needs to be slightly negative)
 # --- END YOUR TASK --- #
 
 print("--- OR Gate ---")
@@ -84,6 +92,8 @@ for input_pair in gate_inputs:
 ```python
 # --- YOUR TASK: Find suitable weights and bias for AND --- #
 # Hint: We need a higher threshold this time. Only (1,1) should activate it.
+weights_and = [1.0, 1.0] # Possible weights
+bias_and = -1.5    # Possible bias (needs to be more negative than OR)
 # --- END YOUR TASK --- #
 
 print("\n--- AND Gate ---")
@@ -102,6 +112,8 @@ not_inputs = [[0], [1]] # Note: inputs are lists containing single elements
 
 # --- YOUR TASK: Find suitable weight and bias for NOT --- #
 # Hint: The weight should probably be negative.
+weights_not = [-1.0] # Possible weight
+bias_not = 0.5     # Possible bias
 # --- END YOUR TASK --- #
 
 print("\n--- NOT Gate ---")
@@ -191,7 +203,7 @@ else:
 
 **(Write your explanation in a text cell below)**
 
-> *answer placeholder: e.g., ...*
+> *answer placeholder: e.g., No, it's impossible because the XOR data points cannot be separated by a single straight line (they are not linearly separable). A single perceptron can only create a linear decision boundary.*
 
 **Part 1 Conclusion:** We've seen that a single Perceptron is like a linear classifier. It's useful for simple tasks but fails when the data isn't linearly separable, like the XOR problem. To solve more complex problems, we need more power!
 
@@ -238,6 +250,7 @@ model = keras.Sequential(name="Simple_MLP_for_XOR") # Give our model a name
 # Input Layer: Keras figures out the input size from 'input_shape' in the first layer.
 # Our input has 2 features (Input 1, Input 2).
 
+# --- YOUR CODE HERE --- #
 # Add the Hidden Layer:
 # Use layers.Dense(). We need to specify:
 # - units: How many neurons in this layer? Let's start with 4.
@@ -251,16 +264,18 @@ model.add(layers.Dense(units=4, activation='relu', input_shape=(2,)))
 # - activation: For binary (0/1) output, 'sigmoid' is a common choice.
 #   (Sigmoid squashes output between 0 and 1, like a probability)
 model.add(layers.Dense(units=1, activation='sigmoid'))
+# --- END YOUR CODE --- #
+
 
 # Print a summary of the model's layers and parameters (weights/biases)
 model.summary()
 ```
 
-<!-- **Task:** Fill in the `YOUR CODE HERE` section to add the hidden and output layers using `layers.Dense()`. Check the comments for guidance on the parameters (`units`, `activation`, `input_shape`). Run the cell to see the model summary. -->
+**Task:** Fill in the `YOUR CODE HERE` section to add the hidden and output layers using `layers.Dense()`. Check the comments for guidance on the parameters (`units`, `activation`, `input_shape`). Run the cell to see the model summary.
 
 **Question:** Look at the `model.summary()`. How many parameters (weights + biases) does the hidden layer have? How many does the output layer have? Can you figure out how these numbers are calculated based on the number of inputs and neurons in each layer?
 
-> *Student answer placeholder: ...*
+> *Student answer placeholder: Hidden layer: (2 inputs * 4 neurons) + 4 biases = 12 params. Output layer: (4 inputs from hidden layer * 1 neuron) + 1 bias = 5 params. Total = 17.*
 
 ### 2.3 Compiling the Model
 
@@ -361,7 +376,7 @@ else:
 
 **Question:** Did the MLP successfully learn the XOR function (achieve 100% accuracy)? Compare this result to the single Perceptron's attempt in Part 1. Why was the MLP able to succeed where the Perceptron failed?
 
-> *answer placeholder: ...*
+> *answer placeholder: Yes, the MLP likely achieved 100% accuracy. It succeeded because it has a hidden layer with non-linear ReLU activation functions, allowing it to learn a non-linear decision boundary necessary to separate the XOR data points.*
 
 ### 2.6 Your Turn (Experiment!)
 
@@ -373,7 +388,7 @@ Let's experiment slightly. Go back to cell in **Section 2.4 (Training the Model)
 
 **(Record your observations in a text cell below)**
 
-> *answer placeholder: e.g., ...*
+> *answer placeholder: e.g., With only 50 epochs, the accuracy might not reach 100% because the model didn't have enough time to learn. With 2000 epochs, it should still work well. Changing hidden units might affect how quickly it learns, but 2-8 units should still be able to solve XOR.*
 
 ### 2.7 Troubleshooting and Further Investigation (Optional)
 

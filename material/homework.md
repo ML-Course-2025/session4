@@ -2,8 +2,8 @@
 
 **Assignment Overview:** This multi-part assignment focuses on advancing your group project through specification and prototyping, while also deepening your understanding of key technologies and concepts relevant to modern AI application development, including Gradio, prompting techniques, and the evolution of machine learning.
 
-**Due Date:** 2025-04-14
-**Submission Method:** Google Drive
+- **Due Date:** 2025-04-14
+- **Submission Method:** Google Drive
 
 ---
 
@@ -21,13 +21,10 @@
         *   Key user interactions and workflows.
         *   Input requirements and expected outputs.
         *   Descriptions of the user interface (UI) elements needed (e.g., dropdowns, text boxes, buttons, output areas).
-        *   (Optional but recommended) Simple user stories (e.g., "As a user, I want to select X so that I can achieve Y").
     *   This specification should be clear enough for someone outside your group to understand what Phase 1 aims to achieve.
 
 2.  **Outline General Specifications for Phases 2 and 3:**
     *   Briefly describe the high-level goals and anticipated features for the *subsequent phases* of your project.
-    *   Consider potential advancements, new functionalities, or integration of more complex backend logic (e.g., actual ML models, APIs) that are *out of scope* for Phase 1.
-    *   This provides a roadmap for future development.
 
 3.  **Develop an Interactive Gradio Prototype for Phase 1:**
     *   Create a functional Gradio application (`gr.Blocks` recommended) that implements the user interface defined in your Phase 1 specifications.
@@ -43,7 +40,7 @@
     *   Summary of Phase 1 detailed specifications.
     *   Overview of Phase 2 & 3 general specifications.
     *   A live demo or clear screenshots/walkthrough of your Gradio prototype.
-*   **Note:** One group will be randomly selected to present their work to the class. All groups should be prepared. Submit presentation slides and a link to your specification document/code repository.
+*   **Note:** some group will be randomly selected to present their work to the class. All groups should be prepared. Submit presentation slides and specification document to Google Drive.
 
 ---
 
@@ -54,23 +51,16 @@
 **Task:**
 
 1.  **Explore Advanced Gradio Functionality:**
-    *   Visit the [Gradio Documentation](https://www.gradio.app/docs/gradio) and potentially the [Gradio Playground](https://www.gradio.app/playground).
+    *   Visit the [Gradio Playground](https://www.gradio.app/playground).
     *   Investigate features beyond basic input/output components, such as:
-        *   State Management (`gr.State`) for multi-turn interactions.
         *   Layout options (`gr.Row`, `gr.Column`, `gr.Tab`, `gr.Accordion`).
-        *   Dynamic UI updates (`gr.update`).
-        *   Theming and custom CSS/JS.
         *   Handling different data types (images, audio, files).
-        *   (If applicable) Integration patterns for ML models.
 2.  **Analyze Relevance to Your Project:**
     *   Discuss within your group which of these advanced features could be most valuable for enhancing your *specific* project in Phases 2 or 3.
 
 **Deliverable:**
 
-*   **Submit a brief group report** (e.g., 1-2 pages).
-*   **Content:**
-    *   List and briefly explain 3-5 advanced Gradio features your group found most interesting or potentially useful.
-    *   For each feature, justify *why* and *how* it could be applied to improve or extend your project beyond the Phase 1 prototype.
+*   **None**
 
 ---
 
